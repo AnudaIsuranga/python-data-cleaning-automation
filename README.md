@@ -145,7 +145,7 @@ The virtual environment and generated output files are excluded from the Git rep
 ### 1. Clone the Repository
 
 ```bash
-git clone <YOUR-GITHUB-REPOSITORY-URL>
+git clone https://github.com/AnudaIsuranga/python-data-cleaning-automation.git
 ```
 
 Navigate into the project directory:
