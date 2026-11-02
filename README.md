@@ -1,24 +1,62 @@
 # Python Data Cleaning Automation
 
-A Python-based data cleaning and quality analysis application with an interactive Streamlit interface. Upload CSV or Excel datasets, configure validation rules, clean inconsistent data, inspect detected issues, and download detailed reports.
+A Python-based data cleaning and data quality analysis application with an interactive Streamlit dashboard. Upload CSV and Excel datasets, configure validation rules, clean inconsistent data, inspect data quality issues, track transformations, and download comprehensive reports.
 
-## Project Overview
+## Application Overview
 
-Data preparation is an important part of data analysis, but real-world datasets frequently contain missing values, duplicate records, inconsistent formatting, and invalid entries.
+This application automates common data preparation tasks and provides an interactive interface for understanding and improving dataset quality.
 
-This project provides an interactive tool to help automate common data cleaning operations and make data quality issues easier to identify and review.
+Users can configure column-specific validation rules, choose how missing and invalid values are handled, perform cleaning operations, compare original and cleaned datasets, and export detailed reports.
 
-Users can upload datasets, configure column-specific validation and missing-value handling, apply cleaning operations, inspect before-and-after results, and export cleaned data with supporting reports.
+## Application Screenshots
+
+### 1. Dashboard Overview
+
+![Dashboard Overview](assets/screenshots/dashboard-overview.png)
+
+### 2. Original Dataset Preview
+
+![Dataset Preview](assets/screenshots/dataset-preview.png)
+
+### 3. Column Validation Settings
+
+![Column Validation Settings](assets/screenshots/column-validation-settings.png)
+
+### 4. Cleaning and Correction Options
+
+![Cleaning Options](assets/screenshots/cleaning-options.png)
+
+### 5. Processing Overview
+
+![Processing Overview](assets/screenshots/processing-overview.png)
+
+### 6. Configuration Summary
+
+![Configuration Summary](assets/screenshots/configuration-summary.png)
+
+### 7. Data Quality Analysis
+
+![Data Quality Analysis](assets/screenshots/data-quality-analysis.png)
+
+### 8. Transformation Change Log
+
+![Transformation Change Log](assets/screenshots/transformation-change-log.png)
+
+### 9. Download Results
+
+![Download Results](assets/screenshots/download-results.png)
 
 ## Key Features
 
-### 1. Dataset Upload
+### Dataset Upload and Preview
 - Upload CSV and Excel (`.xlsx`) files.
-- Preview uploaded datasets before processing.
-- Upload multiple datasets through the application interface.
+- Upload multiple datasets through the application.
+- Preview original data before processing.
+- Inspect exact duplicate records.
 
-### 2. Configurable Column Validation
-Configure data types for individual columns:
+### Configurable Column Validation
+
+Choose a data type for each column:
 
 - Auto
 - Text
@@ -28,8 +66,8 @@ Configure data types for individual columns:
 - Date
 - Ignore
 
-### 3. Data Cleaning
-- Remove unnecessary leading and trailing whitespace.
+### Data Cleaning
+- Trim unnecessary leading and trailing whitespace.
 - Standardise common missing-value markers.
 - Remove completely empty rows.
 - Remove completely empty columns.
@@ -38,45 +76,52 @@ Configure data types for individual columns:
 - Convert valid numeric values.
 - Standardise valid dates to `YYYY-MM-DD`.
 
-### 4. Data Quality Validation
+### Data Quality Validation
 - Identify missing values.
 - Validate email addresses.
 - Validate phone number formats.
-- Identify invalid numeric values.
-- Identify invalid date values.
+- Detect invalid numeric values.
+- Detect invalid date values.
 - Optionally flag negative numeric values.
-- Review detected issues before and after correction.
+- Review issues through a detailed issue explorer.
 
-### 5. Missing-Value Management
-Configure missing-value handling for individual columns, including retaining missing values or replacing them with specified values.
+### Missing-Value Management
 
-### 6. Invalid Data Correction
+Configure missing-value handling independently for each column. Options include retaining missing values or replacing them with a specified value.
+
+### Invalid Data Correction
+
 Choose how invalid numeric and date values should be handled:
+
 - Keep and report.
 - Replace invalid values with missing values.
 
-### 7. Interactive Data Quality Dashboard
-The Streamlit interface provides:
-- Data quality indicators.
-- Before-and-after dataset previews.
-- Issue summaries.
-- Missing-value analysis.
-- Issue exploration by row and column.
-- Transformation history.
-- Visual summaries of detected issues and applied changes.
+### Interactive Data Quality Dashboard
 
-### 8. Transformation Change Log
-Record data modifications with details such as:
+Review:
+- Data quality indicators.
+- Original and cleaned dataset comparisons.
+- Issue summaries.
+- Missing values by column.
+- Detected issues by type.
+- Detailed issue records.
+- Transformation history.
+- Visual summaries of applied transformations.
+
+### Transformation Change Log
+
+Record data modifications with:
+
 - Source row.
 - Column name.
 - Original value.
 - New value.
-- Transformation performed.
-- Explanation of the change.
+- Transformation action.
+- Details of the modification.
 
-### 9. Exportable Reports
+### Downloadable Reports
 
-The application provides five downloadable outputs:
+The application generates five downloadable outputs:
 
 1. Cleaned dataset.
 2. Data quality report.
@@ -102,21 +147,34 @@ The complete Excel report contains seven worksheets:
 | Pandas | Data manipulation and cleaning |
 | Streamlit | Interactive web application |
 | Plotly | Data visualisation |
-| OpenPyXL | Excel file processing and reporting |
+| OpenPyXL | Excel processing and reporting |
 | Unittest | Automated testing |
 
-Additional dependencies are listed in `requirements.txt`.
+See `requirements.txt` for the complete dependency list.
 
 ## Project Structure
 
 ```text
 Python_Data_Cleaning_Automation/
 │
+├── assets/
+│   └── screenshots/
+│       ├── dashboard-overview.png
+│       ├── dataset-preview.png
+│       ├── column-validation-settings.png
+│       ├── cleaning-options.png
+│       ├── processing-overview.png
+│       ├── configuration-summary.png
+│       ├── data-quality-analysis.png
+│       ├── transformation-change-log.png
+│       └── download-results.png
+│
 ├── input/
 │   ├── sample_customers.csv
 │   ├── sample_customers_excel.xlsx
 │   ├── advanced_sample_customers.csv
-│   └── manual_test.csv
+│   ├── manual_test.csv
+│   └── transformation_test.csv
 │
 ├── output/
 │   └── .gitkeep
@@ -129,15 +187,13 @@ Python_Data_Cleaning_Automation/
 └── .gitignore
 ```
 
-The `input` folder contains demonstration datasets. The `output` folder is used for generated files by the core cleaning engine.
-
-The virtual environment and generated output files are excluded from the Git repository.
+Generated files in `output/`, Python cache files, and virtual environments are excluded from version control.
 
 ## Installation and Setup
 
 ### Prerequisites
 
-- Python
+- Python 3
 - pip
 - Git
 - Visual Studio Code (recommended)
@@ -148,23 +204,21 @@ The virtual environment and generated output files are excluded from the Git rep
 git clone https://github.com/AnudaIsuranga/python-data-cleaning-automation.git
 ```
 
-Navigate into the project directory:
+Navigate to the project directory:
 
 ```bash
-cd Python_Data_Cleaning_Automation
+cd python-data-cleaning-automation
 ```
 
 ### 2. Create a Virtual Environment
 
-Windows:
+Windows PowerShell:
 
 ```powershell
 py -m venv venv
 ```
 
 ### 3. Activate the Virtual Environment
-
-Windows PowerShell:
 
 ```powershell
 .\venv\Scripts\Activate.ps1
@@ -183,7 +237,7 @@ pip install -r requirements.txt
 python -m streamlit run app.py
 ```
 
-Open the local application in your browser:
+Open the application in your browser:
 
 ```text
 http://localhost:8501
@@ -191,9 +245,7 @@ http://localhost:8501
 
 ## Running Automated Tests
 
-The project includes an automated test suite covering core data-cleaning functionality.
-
-Run:
+Run the automated test suite with:
 
 ```bash
 python -m unittest -v test_main.py
@@ -204,66 +256,70 @@ The current test suite contains 11 tests covering:
 - Numeric, date and email transformations.
 - Missing-value replacement.
 - Duplicate removal and preservation.
-- Ignored column validation.
+- Ignored-column validation.
 - Invalid numeric value correction.
 - Invalid date correction.
 - Excel report generation.
 - Excel input processing.
 - Empty-row removal.
-- Entirely missing column handling.
+- Missing values in an entire column.
 
 All 11 automated tests passed in the development environment.
 
 ## How to Use
 
 1. Launch the Streamlit application.
-2. Upload a CSV or Excel dataset.
-3. Preview the original dataset.
-4. Configure data types and missing-value handling for individual columns.
-5. Select the cleaning and validation operations.
-6. Choose how invalid numeric and date values should be handled.
-7. Click **Clean and Analyse Data**.
-8. Review the data quality indicators, issue explorer and transformation history.
-9. Download the cleaned dataset and generated reports.
+2. Upload one or more CSV or Excel datasets.
+3. Preview the original data.
+4. Configure column data types.
+5. Choose missing-value handling strategies.
+6. Select the cleaning and correction operations.
+7. Configure invalid numeric and date handling.
+8. Click **Clean and Analyse Data**.
+9. Review the data quality indicators and detected issues.
+10. Inspect the transformation change log.
+11. Download the cleaned dataset and reports.
 
 ## Data Quality Score
 
-The application displays a demonstration data quality score based on identified issues relative to the original dataset size.
+The application displays a demonstration data quality score based on the number of identified issues relative to the original number of data cells.
 
-This is a project-specific indicator for comparing results. It is not an industry-certified data quality measurement.
+This is a project-specific indicator, not an industry-certified data quality measurement.
 
-Detected issues are retained in the issue report even when corresponding values are corrected, preserving an audit trail of the original problems.
+Issue findings are recorded before corrections so the reports can preserve an audit trail of the original data-quality problems.
 
-## Testing and Development Status
+## Development and Testing Status
 
-The following have been verified during development:
+Verified during development:
 
 - 11 automated unit tests passed.
-- CSV processing and cleaning.
-- Excel input processing through the core engine.
-- Streamlit CSV processing.
+- CSV processing through the Streamlit interface.
+- CSV and Excel processing through the core cleaning engine.
 - Data validation and transformation logging.
-- Generation and opening of downloadable reports.
+- Generation of downloadable reports.
+- Manual verification that the five output files download and open.
 
 Additional testing is required before treating the application as a production-ready service.
 
-## Limitations and Future Improvements
+## Future Improvements
 
-Potential future enhancements include:
+Potential future improvements include:
 
-- More advanced data validation rules.
-- Customisable validation patterns.
-- Additional file format support.
-- Larger dataset performance improvements.
-- More advanced data quality metrics.
+- More advanced validation rules.
+- Customisable email and phone validation patterns.
+- Additional file formats.
+- Improved large-dataset performance.
+- More advanced data profiling.
 - Cloud deployment.
 - User authentication and access control.
-- Automated data profiling and cleaning recommendations.
+- Automated cleaning recommendations.
 
 ## Disclaimer
 
-This project is a data cleaning and quality analysis portfolio application. Users should review the cleaning configuration and generated outputs before using cleaned data in business-critical workflows.
+This is a portfolio application for data cleaning and quality analysis. Users should review the configuration and generated outputs before using cleaned datasets in business-critical workflows.
 
 ## Author
 
-Developed as a Python data automation and data quality portfolio project.
+Developed as a Python data automation and data quality portfolio project by Anuda Isuranga.
+
+GitHub: https://github.com/AnudaIsuranga
