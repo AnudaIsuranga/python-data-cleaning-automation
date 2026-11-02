@@ -1,0 +1,7 @@
+customer_id,email,phone,amount,order_date,city
+1, ALICE@EXAMPLE.COM ,0771234567,"2,500",October 20 2026,Colombo
+2,invalid-email,0771234568,not-a-number,not-a-date,Kandy
+3,,0771234569,1800,October 21 2026,Galle
+4,bob@example.com,0771234570,950,October 22 2026,Colombo
+4,bob@example.com,0771234570,950,October 22 2026,Colombo
+5,charlie@example.com,0771234571,N/A,October 23 2026,Negombo

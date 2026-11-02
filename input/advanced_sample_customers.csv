@@ -1,0 +1,9 @@
+
+customer_id,full_name,email,phone_number,order_date,order_amount
+2001,Amal Perera,amal.perera@example.com,+94771234567,2026-10-20,2500
+2002,Sahan Fernando,sahan.example.com,abc123,2026-13-40,two thousand
+2003,Nimali Silva,,12345,2026/10/25,-500
+2004,Kavindi Jay,kavindi@example.com,0761234567,2026-10-28,1800
+2005,Tharindu Perera,tharindu@example.com,0771234567,not-a-date,3200
+2006,Madhavi Sen,madhavi@example.com,+94771234568,2026-10-30,2100
+2004,Kavindi Jay,kavindi@example.com,0761234567,2026-10-28,1800
